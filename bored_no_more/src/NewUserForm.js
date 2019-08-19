@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import './App.css';
 
 class NewUserForm extends React.Component {
   constructor(){
@@ -53,8 +54,8 @@ render() {
                 name='password'
                 />
       
-                <Button onClick={this.userLogin}color='blue' fluid size='large'>
-                  Login
+                <Button onClick={this.newUserLogin}color='blue' fluid size='large'>
+                  Create Account
                 </Button>
               </Segment>
             </Form>
