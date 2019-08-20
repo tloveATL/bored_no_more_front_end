@@ -5,6 +5,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import LoginForm from './LoginForm';
 import NewUserForm from './NewUserForm';
+import UserProfile from './UserProfile'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
       <Switch>
         <Route exact path='/signup' render={() =>  <NewUserForm />} />
         <Route exact path='/login' render={() => <LoginForm/>} />
+        <Route exact path='/profile' render={() => <UserProfile/>} />
       </Switch>
        
       </div>
