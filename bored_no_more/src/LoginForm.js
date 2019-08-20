@@ -9,7 +9,8 @@ class LoginForm extends React.Component {
     this.state = {
       "user": {
         "user_name": "",
-        "password": ""
+        "password": "",
+        "jwt": ""
       }
     }
   }
@@ -29,7 +30,10 @@ class LoginForm extends React.Component {
   })
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+  const jwt = data.jwt
+  localStorage.setItem("jwt", jwt)
+})
 }
 
   render() {

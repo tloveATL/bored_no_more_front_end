@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import './App.css';
+import UserProfile from './UserProfile'
 
 class NewUserForm extends React.Component {
   constructor(){
@@ -28,7 +29,10 @@ class NewUserForm extends React.Component {
   })
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+  const jwt = data.jwt
+  localStorage.setItem("jwt", jwt)
+})
 }
 
 render() {
