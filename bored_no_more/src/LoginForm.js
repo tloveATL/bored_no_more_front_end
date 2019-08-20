@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import NewUserForm from './NewUserForm'
+import {Link} from 'react-router-dom'
 
 class LoginForm extends React.Component {
   constructor(){
@@ -58,9 +60,13 @@ class LoginForm extends React.Component {
                 </Button>
               </Segment>
             </Form>
-            <Message>
-              Not Registered Yet? <a href='#'>Sign Up</a>
-            </Message>
+            <Link to='/signup'>
+            <button 
+              type="button"
+              className="link-button" 
+              >Click here to sign up
+            </button>
+            </Link>
           </Grid.Column>
         </Grid>
     );
