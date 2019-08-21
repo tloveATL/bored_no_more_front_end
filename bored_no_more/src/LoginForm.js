@@ -31,9 +31,21 @@ class LoginForm extends React.Component {
 })
 .then(response => response.json())
 .then(data => {
-  const jwt = data.jwt
-  localStorage.setItem("jwt", jwt)
+  console.log(data)
+  return data
 })
+.then(data => {
+  if (data.jwt) {
+    const jwt = data.jwt
+    localStorage.setItem("jwt", jwt)
+    window.location.href = "/profile"
+  }
+  else {
+    alert(data.error)
+    window.location.href = "/login"
+  }
+})
+// .then(() => )
 }
 
   render() {

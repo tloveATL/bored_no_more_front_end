@@ -30,8 +30,15 @@ class NewUserForm extends React.Component {
 })
 .then(response => response.json())
 .then(data => {
-  const jwt = data.jwt
-  localStorage.setItem("jwt", jwt)
+  if (data.jwt) {
+    const jwt = data.jwt
+    localStorage.setItem("jwt", jwt)
+    window.location.href = "/profile"
+  }
+  else {
+    alert(data.error)
+    window.location.href = "/signup"
+  }
 })
 }
 
